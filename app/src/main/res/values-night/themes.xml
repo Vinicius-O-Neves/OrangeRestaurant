@@ -47,7 +47,6 @@
 
     <style name="ActivityMainSearchView" parent="Widget.AppCompat.SearchView" >
         <item name="android:textColorSecondary">@color/black</item>
-        <item name="android:windowBackground">"@drawable/activity_main_searchview_background"</item>
         <item name="queryHint">"Procure por um item"</item>
         <item name="iconifiedByDefault">false</item>
     </style>
