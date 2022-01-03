@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainactivity.MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+
+        android:src="@drawable/activity_main_orange_logo"
+
+        app:layout_constraintLeft_toLeftOf="@id/guideline2"
+        app:layout_constraintRight_toRightOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="logo" />
+
+    <LinearLayout
+        android:id="@+id/welcome_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_medium"
+
+            android:gravity="center_vertical"
+            android:letterSpacing="0.04"
+            android:padding="6dp"
+            android:text="Olá Vinícius"
+            android:textColor="@color/activity_main_txt_welcome"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+
+            android:src="@drawable/activity_main_hamburguer"
+            android:contentDescription="hamburguer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choose_favorite_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="17dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome_msg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeMinTextSize="15.9sp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.06"
+            android:text="@string/activity_main_choose_the"
+            android:textColor="@color/activity_main_txt_welcome"
+            android:textSize="21sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeMinTextSize="15.9sp"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0.03"
+            android:text="@string/your_favorite_food"
+            android:textColor="@color/activity_main_txt_your_favorite_food"
+            android:textSize="21sp" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
+        style="@style/ActivityMainSearchView"
+
+        app:layout_constraintTop_toBottomOf="@id/choose_favorite_msg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categorys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@id/searchview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.83" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

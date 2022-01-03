@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "548427205920",
+    "firebase_url": "https://orange-restaurant-default-rtdb.firebaseio.com",
+    "project_id": "orange-restaurant",
+    "storage_bucket": "orange-restaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548427205920:android:b4ebd81b5f6a7b27099b45",
+        "android_client_info": {
+          "package_name": "app.dealux.orangerestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548427205920-29jqc057k2mrmi4dcn7nhkq556pkl80h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpSkJRL5iaVdmca-pMlg1DdTs9XOPFAS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548427205920-29jqc057k2mrmi4dcn7nhkq556pkl80h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
