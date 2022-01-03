@@ -16,8 +16,8 @@ import app.dealux.orangerestaurant.OrangeRestaurant
 import app.dealux.orangerestaurant.databinding.SplashScreenBinding
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.ui.splashscreen.di.MainComponent
-import app.dealux.orangerestaurant.auth.AWSAuth
-import app.dealux.orangerestaurant.auth.BiometricAuth
+import app.dealux.orangerestaurant.utils.auth.AWSAuth
+import app.dealux.orangerestaurant.utils.auth.BiometricAuth
 import javax.inject.Inject
 
 class SplashScreen : AppCompatActivity(), View.OnClickListener {

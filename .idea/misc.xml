@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_orange.xml" value="0.3534351145038168" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_orange_logo.xml" value="0.3534351145038168" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_searchview_background.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_category_background.xml" value="0.3534351145038168" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_layout_register_background.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_confirm_ic_help.xml" value="0.15910652920962198" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_background.xml" value="0.2569444444444444" />
@@ -44,6 +45,7 @@
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_confirm_register.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_confirme_register.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/food_category_rv.xml" value="0.75" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_confirm_user.xml" value="0.16" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_login_biometric.xml" value="0.5" />
         <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register.xml" value="0.18" />

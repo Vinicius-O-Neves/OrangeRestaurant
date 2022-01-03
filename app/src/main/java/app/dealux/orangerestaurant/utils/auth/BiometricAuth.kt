@@ -1,4 +1,4 @@
-package app.dealux.orangerestaurant.auth
+package app.dealux.orangerestaurant.utils.auth
 
 import android.app.AlertDialog
 import android.app.Application
