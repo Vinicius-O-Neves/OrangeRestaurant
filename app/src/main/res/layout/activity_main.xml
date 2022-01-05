@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="6dp"
 
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo">
@@ -32,9 +33,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:fontFamily="@font/poppins_medium"
-
             android:gravity="center_vertical"
+
+            android:fontFamily="@font/poppins_medium"
             android:letterSpacing="0.04"
             android:padding="6dp"
             android:text="Olá Vinícius"
@@ -54,7 +55,7 @@
         android:id="@+id/choose_favorite_msg"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="13dp"
         android:orientation="vertical"
         android:weightSum="2"
 
@@ -111,15 +112,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
 
         android:gravity="center_vertical"
         android:letterSpacing="0.04"
-        android:padding="6dp"
         android:text="Categorias"
         android:textColor="@color/activity_main_txt_welcome"
-        android:textSize="21sp"
+        android:textSize="24sp"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchview" />
@@ -128,8 +128,9 @@
         android:id="@+id/rv_categorys"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+
+        android:layoutAnimation="@anim/layout_animation"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
