@@ -101,7 +101,7 @@ class BiometricAuth(
             }
 
             btnLogin.setOnClickListener {
-                inflateLoginLayout(context, activity) {inflateRegisterLayout()}
+                inflateLoginLayout(context, activity) { inflateRegisterLayout() }
             }
 
         }
@@ -130,7 +130,7 @@ class BiometricAuth(
                     verifyPassword,
                     context,
                     activity
-                ) {inflateRegisterLayout()}
+                ) { inflateRegisterLayout() }
             }
         }
         return null

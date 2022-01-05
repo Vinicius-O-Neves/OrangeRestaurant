@@ -24,6 +24,7 @@ class AWSAuth(
 ) : AuthInterface {
 
     private lateinit var connectWithBiometric: ImageView
+
     private lateinit var firstName: TextInputEditText
     private lateinit var lastName: TextInputEditText
     private lateinit var anniversary: Button
@@ -114,13 +115,13 @@ class AWSAuth(
 
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         if (day <= 9 && month <= 9) {
-            anniversary.text = "0$day/0$month/$year"
+            "0$day/0$month/$year".also { anniversary.text = it }
         } else if (day <= 9) {
-            anniversary.text = "0$day/$month/$year"
+            "0$day/$month/$year".also { anniversary.text = it }
         } else if (month <= 9) {
-            anniversary.text = "$day/0$month/$year"
+            "$day/0$month/$year".also { anniversary.text = it }
         } else {
-            anniversary.text = "$day/$month/$year"
+            "$day/$month/$year".also { anniversary.text = it }
         }
     }
 
