@@ -10,9 +10,7 @@ import app.dealux.orangerestaurant.adapter.category.FoodCategoryAdapter
 import app.dealux.orangerestaurant.data.model.FoodCategoryModel
 import app.dealux.orangerestaurant.data.retrofit.RetrofitInstance
 import app.dealux.orangerestaurant.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.io.IOException
 
 class MainActivity :
@@ -34,18 +32,18 @@ class MainActivity :
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        CoroutineScope(Dispatchers.Main.immediate).launch {
-            setupRecyclerView()
+        setupRecyclerView()
+        CoroutineScope(Dispatchers.Default).launch {
             lifecycleScope.launchWhenCreated {
                 val response = try {
-                    RetrofitInstance.api.getCategorys()
+                    async { RetrofitInstance.api.getCategorys() }
                 } catch (e: IOException) {
                     Log.d("Retrofit", "You might not have internet")
                     return@launchWhenCreated
                 }
-                if (response.isSuccessful && response.body() != null) {
+                if (response.await().isSuccessful && response.await().body() != null) {
                     Log.d("Retrofit", "data successfuly load")
-                    foodCategoryAdapter.setData(response.body()!!)
+                    foodCategoryAdapter.setData(response.await().body()!!)
                 } else {
                     Log.d("Retrofit", "Response not successful")
                 }
@@ -53,7 +51,7 @@ class MainActivity :
         }
     }
 
-    private suspend fun setupRecyclerView() = binding!!.rvCategorys.apply {
+    private fun setupRecyclerView() = binding!!.rvCategorys.apply {
         foodCategoryAdapter = FoodCategoryAdapter(this@MainActivity, this@MainActivity)
         adapter = foodCategoryAdapter
         layoutManager =
