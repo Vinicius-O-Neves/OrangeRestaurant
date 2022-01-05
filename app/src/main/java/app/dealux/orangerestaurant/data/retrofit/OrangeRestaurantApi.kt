@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface OrangeRestaurantApi {
 
-    @GET("/items/categorys")
+    @GET("/categorys")
     suspend fun getCategorys(): Response<List<FoodCategoryModel>>
 
     companion object {
