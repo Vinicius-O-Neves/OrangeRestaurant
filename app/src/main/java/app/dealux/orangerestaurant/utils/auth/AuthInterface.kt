@@ -46,6 +46,7 @@ interface AuthInterface {
         Amplify.Auth.rememberDevice({
             Log.i("AuthQuickStart", "Remember device succeeded")
             context.startActivity(Intent(context, MainActivity::class.java))
+            activity.finish()
         },
             {
                 Log.e("AuthQuickStart", "Remember device failed with error", it)
