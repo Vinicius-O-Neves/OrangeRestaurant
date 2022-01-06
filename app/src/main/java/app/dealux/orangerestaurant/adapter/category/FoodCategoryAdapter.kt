@@ -1,6 +1,7 @@
 package app.dealux.orangerestaurant.adapter.category
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -19,7 +20,7 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
     private var selectPosition = 0
 
     interface MyOnClickListener {
-        fun onCardClick(position: Int, items: List<FoodCategoryModel>)
+        fun onCategoryCardClick(position: Int, items: List<FoodCategoryModel>)
     }
 
     private var items = emptyList<FoodCategoryModel>()
@@ -29,9 +30,8 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
             init {
                 binding.categoryPhoto.setOnClickListener {
                     val position = adapterPosition
-                    listener.onCardClick(position, items)
+                    listener.onCategoryCardClick(position, items)
                     selectPosition = position
-                    notifyDataSetChanged()
                 }
             }
         }
@@ -55,7 +55,6 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
             val item = items[position]
             Picasso.get().load(item.categoryPhoto).into(categoryPhoto)
             categoryName.text = item.categoryName
-            holder.binding.cardView.animation = AnimationUtils.loadAnimation(context, R.anim.slide_in)
 
             if (selectPosition == position) {
                 holder.binding.linearLayout.background =

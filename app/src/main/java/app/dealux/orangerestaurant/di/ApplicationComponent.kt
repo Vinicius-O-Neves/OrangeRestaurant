@@ -1,7 +1,7 @@
 package app.dealux.orangerestaurant.di
 
 import android.content.Context
-import app.dealux.orangerestaurant.ui.splashscreen.di.MainComponent
+import app.dealux.orangerestaurant.ui.di.MainComponent
 import dagger.BindsInstance
 import dagger.Component
 import dagger.Module

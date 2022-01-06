@@ -6,149 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ui.mainactivity.MainActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
 
-        android:contentDescription="logo"
-
-        android:src="@drawable/activity_main_orange_logo"
-        app:layout_constraintLeft_toLeftOf="@id/guideline2"
-        app:layout_constraintRight_toRightOf="@id/guideline4"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/welcome_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="6dp"
-
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-
-            android:fontFamily="@font/poppins_medium"
-            android:letterSpacing="0.04"
-            android:padding="6dp"
-            android:text="Olá Vinícius"
-            android:textColor="@color/activity_main_txt_welcome"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="13dp"
-
-            android:contentDescription="hamburguer"
-            android:src="@drawable/activity_main_hamburguer" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/choose_favorite_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="13dp"
-        android:orientation="vertical"
-        android:weightSum="2"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome_msg">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-
-            android:autoSizeMaxTextSize="21sp"
-            android:autoSizeMinTextSize="15.9sp"
-            android:fontFamily="@font/poppins_medium"
-            android:letterSpacing="0.06"
-            android:text="@string/activity_main_choose_the"
-            android:textColor="@color/activity_main_txt_welcome"
-            android:textSize="21sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-
-            android:autoSizeMaxTextSize="21sp"
-            android:autoSizeMinTextSize="15.9sp"
-            android:fontFamily="@font/poppins_bold"
-            android:letterSpacing="0.03"
-            android:text="@string/your_favorite_food"
-            android:textColor="@color/activity_main_txt_your_favorite_food"
-            android:textSize="21sp" />
-    </LinearLayout>
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchview"
-        style="@style/ActivityMainSearchView"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="30dp"
+        android:layout_height="65dp"
+        style="@style/BottomNavigationView"
+        android:background="@drawable/bottom_nav_background"
 
-        android:background="@drawable/activity_main_searchview_background"
-        android:gravity="center"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconSize="26dp"
 
-        app:layout_constraintLeft_toLeftOf="@id/choose_favorite_msg"
-        app:layout_constraintRight_toRightOf="@id/welcome_msg"
-        app:layout_constraintTop_toBottomOf="@id/choose_favorite_msg" />
-
-    <TextView
-        android:id="@+id/txt_categorys"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/poppins"
-
-        android:gravity="center_vertical"
-        android:letterSpacing="0.04"
-        android:text="Categorias"
-        android:textColor="@color/activity_main_txt_welcome"
-        android:textSize="24sp"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchview" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_categorys"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-
-        android:layoutAnimation="@anim/layout_animation"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_categorys" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.83" />
-
-
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

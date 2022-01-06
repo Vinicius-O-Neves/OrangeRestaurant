@@ -2,25 +2,21 @@ package app.dealux.orangerestaurant.ui.mainactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
-import app.dealux.orangerestaurant.adapter.category.FoodCategoryAdapter
-import app.dealux.orangerestaurant.data.model.FoodCategoryModel
-import app.dealux.orangerestaurant.data.retrofit.RetrofitInstance
+import androidx.fragment.app.Fragment
+import app.dealux.orangerestaurant.OrangeRestaurant
+import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
-import java.io.IOException
+import app.dealux.orangerestaurant.ui.di.MainComponent
+import app.dealux.orangerestaurant.ui.foodandcategoryfragment.FoodAndCategoryFragment
 
 class MainActivity :
     AppCompatActivity(),
-    View.OnClickListener,
-    FoodCategoryAdapter.MyOnClickListener {
+    View.OnClickListener {
 
     private var binding: ActivityMainBinding? = null
 
-    private lateinit var foodCategoryAdapter: FoodCategoryAdapter
+    lateinit var mainComponent: MainComponent
 
     override fun onDestroy() {
         super.onDestroy()
@@ -28,42 +24,26 @@ class MainActivity :
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        mainComponent = (applicationContext as OrangeRestaurant).appComponent.mainComponent().create()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        setupRecyclerView()
-        CoroutineScope(Dispatchers.Default).launch {
-            lifecycleScope.launchWhenCreated {
-                val response = try {
-                    async { RetrofitInstance.api.getCategorys() }
-                } catch (e: IOException) {
-                    Log.d("Retrofit", "You might not have internet")
-                    return@launchWhenCreated
-                }
-                if (response.await().isSuccessful && response.await().body() != null) {
-                    Log.d("Retrofit", "data successfuly load")
-                    foodCategoryAdapter.setData(response.await().body()!!)
-                } else {
-                    Log.d("Retrofit", "Response not successful")
-                }
-            }
-        }
+        val foodAndCategoryFragment = FoodAndCategoryFragment()
+
+        setCurrentFragment(foodAndCategoryFragment)
     }
 
-    private fun setupRecyclerView() = binding!!.rvCategorys.apply {
-        foodCategoryAdapter = FoodCategoryAdapter(this@MainActivity, this@MainActivity)
-        adapter = foodCategoryAdapter
-        layoutManager =
-            LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
-        this.startLayoutAnimation()
-    }
+    private fun setCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragment, fragment)
+            commit()
+        }
 
     override fun onClick(view: View) {
         TODO("Not yet implemented")
     }
 
-    override fun onCardClick(position: Int, items: List<FoodCategoryModel>) {
-    }
+
 
 }

@@ -1,11 +1,11 @@
-package app.dealux.orangerestaurant.adapter.category
+package app.dealux.orangerestaurant.adapter.items
 
 import androidx.recyclerview.widget.DiffUtil
-import app.dealux.orangerestaurant.data.model.FoodCategoryModel
+import app.dealux.orangerestaurant.data.model.FoodItemsModel
 
-class FoodCategoryDiffUtil(
-    private val oldList: List<FoodCategoryModel>,
-    private val newList: List<FoodCategoryModel>
+class FoodItemsDiffUtil(
+    private val oldList: List<FoodItemsModel>,
+    private val newList: List<FoodItemsModel>,
 ) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldList.size
@@ -24,10 +24,13 @@ class FoodCategoryDiffUtil(
             oldList[oldItemPosition].id != newList[newItemPosition].id -> {
                 false
             }
-            oldList[oldItemPosition].categoryName != newList[newItemPosition].categoryName -> {
+            oldList[oldItemPosition].name != newList[newItemPosition].name -> {
                 false
             }
-            oldList[oldItemPosition].categoryPhoto != newList[newItemPosition].categoryPhoto -> {
+            oldList[oldItemPosition].price != newList[newItemPosition].price -> {
+                false
+            }
+            oldList[oldItemPosition].frontCoverUrl != newList[newItemPosition].frontCoverUrl -> {
                 false
             }
             else -> true
