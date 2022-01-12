@@ -1,40 +1,38 @@
 package app.dealux.orangerestaurant.adapter.category
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.data.model.FoodCategoryModel
 import app.dealux.orangerestaurant.databinding.FoodCategoryRvBinding
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.Glide
 
 class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener) :
     RecyclerView.Adapter<FoodCategoryAdapter.FoodCategoryViewHolder>() {
 
     private var selectPosition = 0
 
-    interface MyOnClickListener {
-        fun onCategoryCardClick(position: Int, items: List<FoodCategoryModel>)
-    }
-
     private var items = emptyList<FoodCategoryModel>()
+
+    interface MyOnClickListener {
+        fun onCategoryCardClick(position: Int, selectPosition: Int, items: List<FoodCategoryModel>)
+    }
 
     inner class FoodCategoryViewHolder(val binding: FoodCategoryRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            init {
-                binding.categoryPhoto.setOnClickListener {
-                    val position = adapterPosition
-                    listener.onCategoryCardClick(position, items)
-                    selectPosition = position
-                }
+        init {
+            binding.categoryPhoto.setOnClickListener {
+                val position = adapterPosition
+                selectPosition = position
+                listener.onCategoryCardClick(position, selectPosition, items)
+                notifyDataSetChanged()
             }
         }
+    }
 
     override fun getItemCount(): Int {
         return items.size
@@ -53,8 +51,8 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
     override fun onBindViewHolder(holder: FoodCategoryViewHolder, position: Int) {
         holder.binding.apply {
             val item = items[position]
-            Picasso.get().load(item.categoryPhoto).into(categoryPhoto)
             categoryName.text = item.categoryName
+            Glide.with(context).load(item.categoryPhoto).into(categoryPhoto)
 
             if (selectPosition == position) {
                 holder.binding.linearLayout.background =
@@ -83,6 +81,10 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
             }
 
         }
+    }
+
+    override fun getItemId(position: Int): Long {
+        return items[position].id.toLong()
     }
 
     fun setData(newItems: List<FoodCategoryModel>) {
