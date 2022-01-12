@@ -29,16 +29,12 @@ class SplashScreen : AppCompatActivity(), View.OnClickListener {
     private val mViewModel by viewModels<SplashScreenViewModel> { viewModelFactory }
     private lateinit var appComponent: MainComponent
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         appComponent =
             (applicationContext as OrangeRestaurant).appComponent.mainComponent().create()
         appComponent.inject(this)
         super.onCreate(savedInstanceState)
+
         binding = SplashScreenBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
@@ -165,6 +161,11 @@ class SplashScreen : AppCompatActivity(), View.OnClickListener {
                 })
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
 }

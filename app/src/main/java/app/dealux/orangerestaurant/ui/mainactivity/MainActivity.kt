@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import app.dealux.orangerestaurant.OrangeRestaurant
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.databinding.ActivityMainBinding
+import app.dealux.orangerestaurant.ui.ProfileFragment
 import app.dealux.orangerestaurant.ui.di.MainComponent
 import app.dealux.orangerestaurant.ui.foodandcategoryfragment.FoodAndCategoryFragment
 
@@ -30,20 +31,26 @@ class MainActivity :
         setContentView(binding!!.root)
 
         val foodAndCategoryFragment = FoodAndCategoryFragment()
+        val profileFragment = ProfileFragment()
 
-        setCurrentFragment(foodAndCategoryFragment)
+        setCurrentFragment(foodAndCategoryFragment, "food_and_category_fragment")
+
+        binding!!.bottomNavView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu -> setCurrentFragment(foodAndCategoryFragment, "food_and_category_fragment")
+                R.id.profile -> setCurrentFragment(profileFragment, "profile_fragment")
+            }
+            true
+        }
     }
 
-    private fun setCurrentFragment(fragment: Fragment) =
+    private fun setCurrentFragment(fragment: Fragment, tag: String) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment, fragment)
+            replace(R.id.fragment, fragment, tag)
             commit()
         }
 
     override fun onClick(view: View) {
         TODO("Not yet implemented")
     }
-
-
-
 }
