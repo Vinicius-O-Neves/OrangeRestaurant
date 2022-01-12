@@ -16,6 +16,9 @@ interface MainModule {
     @ViewModelKey(SplashScreenViewModel::class)
     fun bindSplashScreenViewModel(viewModel: SplashScreenViewModel): ViewModel
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(FoodAndCategoryViewModel::class)
     fun bindFoodAndCategoryViewModel(viewModel: FoodAndCategoryViewModel): ViewModel
 
 }
