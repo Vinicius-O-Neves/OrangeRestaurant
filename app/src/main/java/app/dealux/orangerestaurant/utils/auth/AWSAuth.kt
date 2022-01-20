@@ -32,7 +32,6 @@ class AWSAuth(
     private lateinit var password: TextInputEditText
 
     init {
-        configureAmplify(activity)
         rememberUser(context, activity) { initializeAWSAuth() }
     }
 
