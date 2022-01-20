@@ -26,4 +26,8 @@
     <string name="activity_main_items_header">Popular</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="food_fragment_would_like_add_some_ingredient">Deseja adicionar algum ingrediente?</string>
+    <string name="food_fragment_ingredients">Ingredientes</string>
+    <string name="food_fragment_how_would_you_like_the_meat_point">Como gostaria do ponto da carne?</string>
+    <string name="food_fragment_add_to_cart">Adicionar ao carrinho:</string>
 </resources>
