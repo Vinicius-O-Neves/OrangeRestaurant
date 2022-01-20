@@ -24,4 +24,7 @@
     <string name="your_favorite_food">sua comida favorita</string>
     <string name="activity_main_categorys_header">Categorias</string>
     <string name="activity_main_items_header">Popular</string>
+    <string name="food_fragment_would_like_add_some_ingredient">Deseja adicionar algum ingrediente?</string>
+    <string name="food_fragment_ingredients">Ingredientes</string>
+    <string name="food_fragment_add_to_cart">Adicionar ao carrinho:</string>
 </resources>
