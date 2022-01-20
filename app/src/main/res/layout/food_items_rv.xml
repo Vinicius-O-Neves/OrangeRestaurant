@@ -4,6 +4,7 @@
     android:layout_width="189.8dp"
     android:layout_height="265dp"
     android:layout_marginEnd="30.6dp"
+    android:elevation="20dp"
     android:focusableInTouchMode="true">
 
     <androidx.cardview.widget.CardView
@@ -11,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="10dp"
-        app:cardElevation="20dp"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
