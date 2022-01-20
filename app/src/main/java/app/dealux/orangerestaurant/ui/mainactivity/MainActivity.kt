@@ -53,4 +53,9 @@ class MainActivity :
     override fun onClick(view: View) {
         TODO("Not yet implemented")
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        binding!!.bottomNavView.visibility = View.VISIBLE
+    }
 }
