@@ -30,8 +30,8 @@ class FoodItemsAdapter(var context: Context, val listener: MyOnClickListener) :
         }
     }
 
-    override fun getItemCount(): Int {
-        return items.size
+    override fun getItemId(position: Int): Long {
+        return items[position].id.toLong()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodItemsViewHolder {
@@ -50,12 +50,13 @@ class FoodItemsAdapter(var context: Context, val listener: MyOnClickListener) :
             foodName.text = item.name
             "R$ ${item.price}".also { foodPrice.text = it }
             Glide.with(context).load(item.frontCoverUrl).into(foodPhoto)
-            holder.binding.cardView.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up)
+            holder.binding.cardView.animation =
+                AnimationUtils.loadAnimation(context, R.anim.slide_up)
         }
     }
 
-    override fun getItemId(position: Int): Long {
-        return items[position].id.toLong()
+    override fun getItemCount(): Int {
+        return items.size
     }
 
     fun setData(newItems: List<FoodItemsModel>) {
