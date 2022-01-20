@@ -108,6 +108,8 @@ class FoodAndCategoryFragment : Fragment(),
         bundle.putString("foodName", items[position].name)
         bundle.putString("serve", items[position].serve)
         bundle.putString("foodPrice", items[position].price)
+        bundle.putString("foodDescription", items[position].description)
+        bundle.putString("category", items[position].category)
         val foodFragment = FoodFragment()
         foodFragment.arguments = bundle
         val fragmentTransaction = activity!!.supportFragmentManager.beginTransaction()
