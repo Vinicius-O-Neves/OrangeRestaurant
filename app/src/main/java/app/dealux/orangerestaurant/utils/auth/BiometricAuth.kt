@@ -34,10 +34,6 @@ class BiometricAuth(
     private lateinit var email: TextInputEditText
     private lateinit var password: TextInputEditText
 
-    init {
-        configureAmplify(activity)
-    }
-
     fun initializeBiometricAuth() {
         executor = ContextCompat.getMainExecutor(context)
         biometricPrompt = BiometricPrompt(activity, executor,
