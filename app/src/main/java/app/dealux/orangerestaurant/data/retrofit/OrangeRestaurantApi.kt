@@ -1,7 +1,9 @@
 package app.dealux.orangerestaurant.data.retrofit
 
+import app.dealux.orangerestaurant.data.model.AddIngredientModel
 import app.dealux.orangerestaurant.data.model.FoodCategoryModel
 import app.dealux.orangerestaurant.data.model.FoodItemsModel
+import app.dealux.orangerestaurant.data.model.MeatPointModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,6 +16,12 @@ interface OrangeRestaurantApi {
     @GET("/category/{category}")
     suspend fun getFoods(
         @Path("category") category: String): Response<List<FoodItemsModel>>
+
+    @GET("/addInHamburguer")
+    suspend fun getItemsToAddInHamburguer(): Response<List<AddIngredientModel>>
+
+    @GET("/meatPoint")
+    suspend fun getMeatPoints(): Response<List<MeatPointModel>>
 
     companion object {
         const val BASE_URL = "http://192.168.15.14:8140"
