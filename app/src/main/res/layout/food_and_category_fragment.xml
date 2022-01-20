@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewmodel"
             type="app.dealux.orangerestaurant.ui.foodandcategoryfragment.FoodAndCategoryViewModel" />
@@ -26,8 +26,8 @@
                 android:layout_gravity="center"
 
                 android:contentDescription="logo"
-
                 android:src="@drawable/activity_main_orange_logo"
+
                 app:layout_constraintLeft_toLeftOf="@id/guideline2"
                 app:layout_constraintRight_toRightOf="@id/guideline4"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +36,8 @@
                 android:id="@+id/welcome_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="6dp"
+                android:orientation="horizontal"
 
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/logo">
@@ -45,9 +45,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-
                     android:fontFamily="@font/poppins_medium"
+
+                    android:gravity="center_vertical"
                     android:letterSpacing="0.04"
                     android:padding="6dp"
                     android:text="Olá Vinícius"
@@ -140,8 +140,8 @@
                 android:id="@+id/rv_categorys"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
 
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -168,8 +168,8 @@
                 android:id="@+id/rv_items"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
 
                 android:layoutAnimation="@anim/layout_animation"
 
