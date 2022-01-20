@@ -17,10 +17,17 @@ import app.dealux.orangerestaurant.databinding.SplashScreenBinding
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.ui.di.MainComponent
 import app.dealux.orangerestaurant.utils.auth.AWSAuth
+import app.dealux.orangerestaurant.utils.auth.AuthInterface
 import app.dealux.orangerestaurant.utils.auth.BiometricAuth
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SplashScreen : AppCompatActivity(), View.OnClickListener {
+class SplashScreen : AppCompatActivity(),
+    View.OnClickListener,
+    AuthInterface {
 
     private var binding: SplashScreenBinding? = null
 
@@ -34,6 +41,10 @@ class SplashScreen : AppCompatActivity(), View.OnClickListener {
             (applicationContext as OrangeRestaurant).appComponent.mainComponent().create()
         appComponent.inject(this)
         super.onCreate(savedInstanceState)
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            configureAmplify(this@SplashScreen)
+        }
 
         binding = SplashScreenBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
@@ -166,6 +177,8 @@ class SplashScreen : AppCompatActivity(), View.OnClickListener {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+        CoroutineScope(Dispatchers.IO).cancel()
+        CoroutineScope(Dispatchers.Main).cancel()
     }
 
 }
