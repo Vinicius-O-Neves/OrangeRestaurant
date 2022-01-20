@@ -36,4 +36,17 @@ data class FoodItemsModel(
         return true
     }
 
+    override fun hashCode(): Int {
+        var result = id
+        result = 31 * result + name.hashCode()
+        result = 31 * result + category.hashCode()
+        result = 31 * result + price.hashCode()
+        result = 31 * result + description.hashCode()
+        result = 31 * result + frontCoverUrl.hashCode()
+        result = 31 * result + imageDescription1.hashCode()
+        result = 31 * result + imageDescription2.hashCode()
+        result = 31 * result + serve.hashCode()
+        return result
+    }
+
 }
