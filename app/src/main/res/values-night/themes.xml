@@ -20,7 +20,6 @@
     <style name="ActivityMainTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="background">@color/activity_main_background</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
     </style>
 
