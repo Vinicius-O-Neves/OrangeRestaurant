@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.data.model.MeatPointModel
+import app.dealux.orangerestaurant.data.retrofit.model.MeatPointModel
 import app.dealux.orangerestaurant.databinding.MeatPointRvBinding
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.CoroutineScope
