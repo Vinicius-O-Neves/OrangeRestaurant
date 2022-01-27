@@ -7,7 +7,7 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.data.model.FoodItemsModel
+import app.dealux.orangerestaurant.data.retrofit.model.FoodItemsModel
 import app.dealux.orangerestaurant.databinding.FoodItemsRvBinding
 import com.bumptech.glide.Glide
 
@@ -56,7 +56,11 @@ class FoodItemsAdapter(var context: Context, val listener: MyOnClickListener) :
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return if (items != null) {
+            items.size
+        } else {
+            0
+        }
     }
 
     fun setData(newItems: List<FoodItemsModel>) {
