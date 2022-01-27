@@ -1,7 +1,7 @@
 package app.dealux.orangerestaurant.adapter.items
 
 import androidx.recyclerview.widget.DiffUtil
-import app.dealux.orangerestaurant.data.model.FoodItemsModel
+import app.dealux.orangerestaurant.data.retrofit.model.FoodItemsModel
 
 class FoodItemsDiffUtil(
     private val oldList: List<FoodItemsModel>,
