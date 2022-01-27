@@ -21,7 +21,7 @@
         tools:replace="name">
 
         <activity
-            android:name=".ui.mainactivity.MainActivity"
+            android:name=".ui.activitys.view.MainActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:resizeableActivity="true"
@@ -29,7 +29,7 @@
             android:theme="@style/ActivityMainTheme"/>
 
         <activity
-            android:name=".ui.splashscreen.SplashScreen"
+            android:name=".ui.activitys.view.SplashScreen"
             android:exported="true"
             android:resizeableActivity="true"
             android:screenOrientation="portrait"
