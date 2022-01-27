@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.data.model.FoodCategoryModel
+import app.dealux.orangerestaurant.data.retrofit.model.FoodCategoryModel
 import app.dealux.orangerestaurant.databinding.FoodCategoryRvBinding
 import com.bumptech.glide.Glide
 
@@ -84,7 +84,11 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return if (items != null) {
+            items.size
+        } else {
+            0
+        }
     }
 
     fun setData(newItems: List<FoodCategoryModel>) {
