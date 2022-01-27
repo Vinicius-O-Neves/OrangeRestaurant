@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.data.model.AddIngredientModel
+import app.dealux.orangerestaurant.data.retrofit.model.AddIngredientModel
 import app.dealux.orangerestaurant.databinding.AddIngredientRvBinding
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +21,7 @@ class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener
 
     private var items = emptyList<AddIngredientModel>()
 
-    private var itemsAdded: MutableList<String> = mutableListOf()
+    var itemsAdded: MutableList<String> = mutableListOf()
 
     interface MyOnClickListener {
         fun onItemClick(position: Int, selectPosition: Int?, items: List<AddIngredientModel>)
@@ -92,7 +92,6 @@ class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener
             )!!.constantState
         ) {
             itemsAdded.add(item.itemName)
-            println(itemsAdded)
             holder.binding.cardView.background =
                 ContextCompat.getDrawable(
                     context,
