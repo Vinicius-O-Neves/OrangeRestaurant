@@ -1,11 +1,10 @@
 package app.dealux.orangerestaurant.data.retrofit
 
-import app.dealux.orangerestaurant.data.model.AddIngredientModel
-import app.dealux.orangerestaurant.data.model.FoodCategoryModel
-import app.dealux.orangerestaurant.data.model.FoodItemsModel
-import app.dealux.orangerestaurant.data.model.MeatPointModel
+import app.dealux.orangerestaurant.data.retrofit.model.*
+import app.dealux.orangerestaurant.data.sqlite.OrderEntity
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface OrangeRestaurantApi {
@@ -23,8 +22,12 @@ interface OrangeRestaurantApi {
     @GET("/meatPoint")
     suspend fun getMeatPoints(): Response<List<MeatPointModel>>
 
+    @POST("/order")
+    suspend fun sendOrder(): Response<List<OrderEntity>>
+
     companion object {
         const val BASE_URL = "http://192.168.15.14:8140"
+        const val ORDER_URL = "http://192.168.15.14:3000"
     }
 
 }
