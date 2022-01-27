@@ -1,7 +1,7 @@
 package app.dealux.orangerestaurant.adapter.itemstoadd
 
 import androidx.recyclerview.widget.DiffUtil
-import app.dealux.orangerestaurant.data.model.MeatPointModel
+import app.dealux.orangerestaurant.data.retrofit.model.MeatPointModel
 
 class MeatPointDifferUtil(
     private val oldList: List<MeatPointModel>,
