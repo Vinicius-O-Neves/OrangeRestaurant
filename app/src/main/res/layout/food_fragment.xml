@@ -201,7 +201,7 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="@string/food_fragment_ingredients"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -269,7 +269,7 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="@string/food_fragment_would_like_add_some_ingredient"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:visibility="gone" />
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -291,7 +291,7 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="@string/food_fragment_how_would_you_like_the_meat_point"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:visibility="gone" />
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -318,7 +318,7 @@
                             android:fontFamily="@font/poppins_bold"
                             android:text="@string/food_fragment_add_to_cart"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <LinearLayout
                             android:layout_width="120dp"
@@ -332,7 +332,7 @@
                                 android:id="@+id/decrease_item"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
+                                android:layout_marginStart="3dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/poppins_bold"
 
@@ -357,7 +357,7 @@
                                 android:id="@+id/increase_item"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_marginEnd="5dp"
+                                android:layout_marginEnd="3dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/poppins_bold"
 
