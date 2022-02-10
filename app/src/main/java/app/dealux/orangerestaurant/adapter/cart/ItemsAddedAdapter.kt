@@ -18,7 +18,7 @@ class ItemsAddedAdapter(var context: Context) :
         }
 
     override fun getItemId(position: Int): Long {
-        return items[position].id.toLong()
+        return items[position].itemId.toLong()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsAddedAdapterViewHolder {
@@ -34,9 +34,10 @@ class ItemsAddedAdapter(var context: Context) :
     override fun onBindViewHolder(holder: ItemsAddedAdapterViewHolder, position: Int) {
         holder.binding.apply {
             val item = items[position]
-            val regex = Regex("[^A-Za-z0-9-%]")
-            val result = regex.replace(item.itemsAdded, " ")
-            "•$result".also { txtItemAddedInFood.text = it }
+            val regex = Regex("[^A-Za-z0-9-%-,]")
+            val itemsAdded = regex.replace(item.itemsAdded, " ")
+
+            "•$itemsAdded, ${item.meatPoint}".also { txtItemAddedInFood.text = it }
         }
     }
 
@@ -49,7 +50,6 @@ class ItemsAddedAdapter(var context: Context) :
         val diffResult = DiffUtil.calculateDiff(differUtil)
         items = newItems
         diffResult.dispatchUpdatesTo(this)
-        CartAdapter(context).notifyDataSetChanged()
     }
 
 }
