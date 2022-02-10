@@ -7,11 +7,6 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/profile"
-        android:title="Perfil"
-        android:icon="@drawable/ic_person"/>
-
-    <item
         android:id="@+id/cart"
         android:title="Carrinho"
         android:icon="@drawable/ic_shopping_cart"/>
