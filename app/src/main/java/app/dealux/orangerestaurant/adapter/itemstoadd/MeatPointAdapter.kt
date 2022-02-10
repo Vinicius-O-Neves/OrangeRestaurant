@@ -14,18 +14,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MeatPointAdapter(var context: Context, val listener: MyOnClickListener) :
+class MeatPointAdapter(var context: Context) :
     RecyclerView.Adapter<MeatPointAdapter.MeatPointViewHolder>() {
 
     private var selectPosition: Int? = null
 
     private var items = emptyList<MeatPointModel>()
 
-    private lateinit var meatPoint: String
-
-    interface MyOnClickListener {
-        fun onMeatPointCardClick(position: Int, items: List<MeatPointModel>)
-    }
+    lateinit var meatPoint: String
 
     inner class MeatPointViewHolder(val binding: MeatPointRvBinding) :
         RecyclerView.ViewHolder(binding.root) {

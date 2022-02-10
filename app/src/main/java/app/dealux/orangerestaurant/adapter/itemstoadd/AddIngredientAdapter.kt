@@ -14,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener) :
+class AddIngredientAdapter(var context: Context) :
     RecyclerView.Adapter<AddIngredientAdapter.AddInHamburguerViewHolder>() {
 
     private var selectPosition: Int? = null
@@ -23,17 +23,12 @@ class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener
 
     var itemsAdded: MutableList<String> = mutableListOf()
 
-    interface MyOnClickListener {
-        fun onItemClick(position: Int, selectPosition: Int?, items: List<AddIngredientModel>)
-    }
-
     inner class AddInHamburguerViewHolder(val binding: AddIngredientRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener {
                 val position = adapterPosition
                 selectPosition = position
-                listener.onItemClick(position, selectPosition, items)
                 notifyDataSetChanged()
             }
         }
@@ -63,7 +58,7 @@ class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener
             Glide.with(context).load(item.itemImage).into(itemImage)
 
             CoroutineScope(Dispatchers.Main).launch {
-                onCardCick(position, item, holder)
+                onCardClick(position, item, holder)
             }
 
         }
@@ -80,7 +75,7 @@ class AddIngredientAdapter(var context: Context, val listener: MyOnClickListener
         diffResult.dispatchUpdatesTo(this)
     }
 
-   private fun onCardCick(
+   private fun onCardClick(
         position: Int,
         item: AddIngredientModel,
         holder: AddInHamburguerViewHolder
