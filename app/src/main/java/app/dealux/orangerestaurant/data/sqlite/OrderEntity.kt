@@ -7,11 +7,12 @@ import java.io.Serializable
 @Entity(tableName = "orders_table")
 data class OrderEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val itemId: Int,
     val name: String,
     val price: String,
     val photo: String,
     val itemsAdded: String,
+    val meatPoint: String,
 ) : Serializable {
 
     override fun equals(other: Any?): Boolean {
@@ -21,7 +22,7 @@ data class OrderEntity(
 
         other as OrderEntity
 
-        if (id != other.id) {
+        if ( itemId != other. itemId) {
             return false
         }
         if (name != other.name) {
@@ -36,15 +37,19 @@ data class OrderEntity(
         if (itemsAdded != other.itemsAdded) {
             return false
         }
+        if (meatPoint != other.meatPoint) {
+            return false
+        }
         return true
     }
 
     override fun hashCode(): Int {
-        var result = id
+        var result = itemId
         result = 31 * result + name.hashCode()
         result = 31 * result + price.hashCode()
         result = 31 * result + photo.hashCode()
         result = 31 * result + itemsAdded.hashCode()
+        result = 31 * result + meatPoint.hashCode()
         return result
     }
 }
