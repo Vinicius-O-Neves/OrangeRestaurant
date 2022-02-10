@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="13dp"
 
                     android:fontFamily="@font/poppins_bold"
                     android:text="Adicionar:"
@@ -57,7 +57,7 @@
                 android:layout_width="70dp"
                 android:layout_height="60dp"
                 android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="14dp"
                 android:adjustViewBounds="true"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
