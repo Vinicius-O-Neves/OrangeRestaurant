@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.activitys.view.MainActivity">
@@ -164,7 +165,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="2dp"
 
-                android:layoutAnimation="@anim/layout_animation"
+                android:layoutAnimation="@anim/layout_animation_slide_up"
 
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -185,7 +186,7 @@
                 app:layout_constraintGuide_percent="0.83" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>
 
 
