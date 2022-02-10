@@ -16,18 +16,21 @@ class CartDiffUtil(
     }
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition].id == newList[newItemPosition].id
+        return oldList[oldItemPosition].itemId == newList[newItemPosition].itemId
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return when {
-            oldList[oldItemPosition].id != newList[newItemPosition].id -> {
+            oldList[oldItemPosition].itemId != newList[newItemPosition].itemId-> {
                 false
             }
             oldList[oldItemPosition].name != newList[newItemPosition].name -> {
                 false
             }
             oldList[oldItemPosition].price != newList[newItemPosition].price -> {
+                false
+            }
+            oldList[oldItemPosition].photo != newList[newItemPosition].photo -> {
                 false
             }
             oldList[oldItemPosition].itemsAdded != newList[newItemPosition].itemsAdded  -> {
