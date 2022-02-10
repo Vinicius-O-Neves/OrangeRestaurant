@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.FragmentActivity
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.ui.mainactivity.MainActivity
+import app.dealux.orangerestaurant.ui.activitys.view.MainActivity
 import com.amplifyframework.AmplifyException
 import com.amplifyframework.api.aws.AWSApiPlugin
 import com.amplifyframework.auth.AuthUserAttributeKey
