@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.adapter.itemstoadd.AddIngredientAdapter
 import app.dealux.orangerestaurant.adapter.itemstoadd.MeatPointAdapter
+import app.dealux.orangerestaurant.data.retrofit.RetrofitInstance
 import app.dealux.orangerestaurant.data.retrofit.model.AddIngredientModel
 import app.dealux.orangerestaurant.data.retrofit.model.MeatPointModel
 import app.dealux.orangerestaurant.data.sqlite.OrderEntity
-import app.dealux.orangerestaurant.data.retrofit.RetrofitInstance
 import app.dealux.orangerestaurant.databinding.FoodFragmentBinding
 import app.dealux.orangerestaurant.ui.activitys.view.MainActivity
 import app.dealux.orangerestaurant.ui.fragments.viewmodel.FoodFragmentViewModel
@@ -91,8 +91,14 @@ class FoodFragment : Fragment(),
         } ".also { binding!!.foodPrice.text = it }
         binding!!.foodDescription.text = args.get("foodDescription").toString()
 
+        return binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         when (category) {
-            "Hambúgueres" -> {
+            "Hambúrgueres" -> {
                 binding!!.wouldLikeAddSomeIngredient.visibility = View.VISIBLE
                 binding!!.addIngredientRv.visibility = View.VISIBLE
                 binding!!.howWouldLikeTheMeatPoint.visibility = View.VISIBLE
@@ -100,12 +106,6 @@ class FoodFragment : Fragment(),
                 loadFromRetrofit()
             }
         }
-
-        return binding!!.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         listener()
     }
@@ -137,7 +137,7 @@ class FoodFragment : Fragment(),
     private fun loadFromRetrofit() {
         CoroutineScope(Dispatchers.IO).launch {
             when (category) {
-                "Hambúgueres" -> {
+                "Hambúrgueres" -> {
                     addIngredientResponse = try {
                         async { RetrofitInstance.api.getItemsToAddInHamburguer() }
                     } catch (e: IOException) {
@@ -196,7 +196,11 @@ class FoodFragment : Fragment(),
             Gson().toJson(addIngredientAdapter.itemsAdded)
         }
 
-        val meatPoint = meatPointAdapter.meatPoint
+        val meatPoint = if (meatPointAdapter.meatPoint != "") {
+            meatPointAdapter.meatPoint
+        } else {
+            ""
+        }
 
         val order = OrderEntity(
             0,
@@ -211,16 +215,5 @@ class FoodFragment : Fragment(),
         Toast.makeText(requireContext(), "Item adicionado com Sucesso!", Toast.LENGTH_SHORT).show()
     }
 
-//    private fun updateDataInDataBase(numOfItem: Int) {
-//        val order = OrderEntity(
-//            0,
-//            args.get("foodName").toString(),
-//            args.getString("foodPrice").toString(),
-//            args.get("frontCoverUrl").toString(),
-//            numOfItem.toString())
-//
-//        mViewModel.updateOrder(order)
-//        Toast.makeText(requireContext(), "Successfully updated", Toast.LENGTH_SHORT).show()
-//    }
 
 }
