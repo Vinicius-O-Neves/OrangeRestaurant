@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import app.dealux.orangerestaurant.repository.AuthDataStoreRepository
+import app.dealux.orangerestaurant.data.datastore.AuthDataStoreRepository
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
