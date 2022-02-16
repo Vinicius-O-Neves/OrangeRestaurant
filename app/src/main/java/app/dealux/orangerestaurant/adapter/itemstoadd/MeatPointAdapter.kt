@@ -21,7 +21,7 @@ class MeatPointAdapter(var context: Context) :
 
     private var items = emptyList<MeatPointModel>()
 
-    lateinit var meatPoint: String
+    var meatPoint: String = ""
 
     inner class MeatPointViewHolder(val binding: MeatPointRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
