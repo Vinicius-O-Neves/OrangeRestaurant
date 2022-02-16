@@ -19,7 +19,7 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
     private var items = emptyList<FoodCategoryModel>()
 
     interface MyOnClickListener {
-        fun onCategoryCardClick(position: Int, selectPosition: Int, items: List<FoodCategoryModel>)
+        fun onCategoryCardClick(position: Int, selectPosition: Int, itemsList: List<FoodCategoryModel>)
     }
 
     inner class FoodCategoryViewHolder(val binding: FoodCategoryRvBinding) :
@@ -84,11 +84,7 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
     }
 
     override fun getItemCount(): Int {
-        return if (items != null) {
-            items.size
-        } else {
-            0
-        }
+        return items.size
     }
 
     fun setData(newItems: List<FoodCategoryModel>) {
