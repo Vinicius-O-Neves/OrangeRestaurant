@@ -56,11 +56,7 @@ class FoodItemsAdapter(var context: Context, val listener: MyOnClickListener) :
     }
 
     override fun getItemCount(): Int {
-        return if (items != null) {
-            items.size
-        } else {
-            0
-        }
+        return items.size
     }
 
     fun setData(newItems: List<FoodItemsModel>) {
