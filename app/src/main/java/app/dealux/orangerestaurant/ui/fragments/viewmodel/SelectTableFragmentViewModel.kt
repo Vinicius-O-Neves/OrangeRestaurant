@@ -3,7 +3,7 @@ package app.dealux.orangerestaurant.ui.fragments.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.dealux.orangerestaurant.repository.TableNumberDataStoreRepository
+import app.dealux.orangerestaurant.data.datastore.TableNumberDataStoreRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
