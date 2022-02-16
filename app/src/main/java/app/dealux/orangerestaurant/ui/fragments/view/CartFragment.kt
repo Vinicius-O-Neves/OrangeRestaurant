@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.adapter.cart.CartAdapter
+import app.dealux.orangerestaurant.data.datastore.TableNumberDataStoreRepository
 import app.dealux.orangerestaurant.data.sqlite.OrderEntity
 import app.dealux.orangerestaurant.databinding.CartFragmentBinding
-import app.dealux.orangerestaurant.repository.TableNumberDataStoreRepository
 import app.dealux.orangerestaurant.ui.activitys.view.MainActivity
 import app.dealux.orangerestaurant.ui.fragments.viewmodel.CartFragmentViewModel
 import com.google.firebase.database.DatabaseReference
