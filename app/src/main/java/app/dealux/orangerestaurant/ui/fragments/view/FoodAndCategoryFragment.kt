@@ -2,11 +2,15 @@ package app.dealux.orangerestaurant.ui.fragments.view
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import  androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
@@ -14,11 +18,11 @@ import app.dealux.orangerestaurant.adapter.category.FoodCategoryAdapter
 import app.dealux.orangerestaurant.adapter.items.FoodItemsAdapter
 import app.dealux.orangerestaurant.data.retrofit.model.FoodCategoryModel
 import app.dealux.orangerestaurant.data.retrofit.model.FoodItemsModel
-import app.dealux.orangerestaurant.data.retrofit.RetrofitInstance
 import app.dealux.orangerestaurant.databinding.FoodAndCategoryFragmentBinding
+import app.dealux.orangerestaurant.ui.activitys.view.MainActivity
+import app.dealux.orangerestaurant.ui.fragments.viewmodel.FoodAndCategoryViewModel
 import kotlinx.coroutines.*
-import retrofit2.Response
-import java.io.IOException
+import javax.inject.Inject
 
 class FoodAndCategoryFragment : Fragment(),
     FoodCategoryAdapter.MyOnClickListener,
@@ -27,17 +31,25 @@ class FoodAndCategoryFragment : Fragment(),
     private var binding: FoodAndCategoryFragmentBinding? = null
     private lateinit var mContext: Context
 
-    private lateinit var rvCategorys: RecyclerView
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val mViewModel by viewModels<FoodAndCategoryViewModel> { viewModelFactory }
+
+    private lateinit var rvCategories: RecyclerView
     private lateinit var foodCategoryAdapter: FoodCategoryAdapter
-    private lateinit var categoryResponse: Deferred<Response<List<FoodCategoryModel>>>
 
     private lateinit var rvItems: RecyclerView
     private lateinit var foodItemsAdapter: FoodItemsAdapter
-    private lateinit var itemsResponse: Deferred<Response<List<FoodItemsModel>>>
 
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
+        (mContext as MainActivity).mainComponent.inject(this)
     }
 
     override fun onCreateView(
@@ -57,35 +69,52 @@ class FoodAndCategoryFragment : Fragment(),
         super.onViewCreated(view, savedInstanceState)
 
         loadFromRetrofit()
+        searchView()
+    }
+
+    private fun searchView() {
+        binding!!.searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(newText: String?): Boolean {
+                if (newText!!.isNotEmpty()) {
+                    lifecycleScope.launchWhenCreated {
+                        mViewModel.searchItem(newText.lowercase())
+                    }
+
+                    foodItemsAdapter.setData(mViewModel.itemsFound)
+                    "Itens com $newText".also {  binding!!.txtItems.text = it }
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                rvItems.removeAllViews()
+                mViewModel.itemsFound.clear()
+                return true
+            }
+        })
     }
 
     override fun onCategoryCardClick(
         position: Int,
         selectPosition: Int,
-        items: List<FoodCategoryModel>
+        itemsList: List<FoodCategoryModel>
     ) {
-        val categoryName = items[position].categoryName
+        val categoryName = itemsList[position].categoryName
 
-        CoroutineScope(Dispatchers.IO).launch {
-            itemsResponse = try {
-                async { RetrofitInstance.api.getFoods(categoryName) }
-            } catch (e: IOException) {
-                Log.d("Retrofit", "You might not have internet")
-                return@launch
-            }
-            if (itemsResponse.await().isSuccessful && itemsResponse.await().body()!! != null) {
-                Log.d("Retrofit", "data successfuly load")
-                foodItemsAdapter.setData(itemsResponse.await().body()!!)
-                CoroutineScope(Dispatchers.Main.immediate).launch {
-                    binding!!.txtItems.text = categoryName
-                }
-            } else {
-                Log.d("Retrofit", "Response not successful")
-            }
+        lifecycleScope.launchWhenCreated {
+            mViewModel.loadItems(categoryName)
         }
+
+        binding!!.txtItems.text = categoryName
+        mViewModel.items.observe(viewLifecycleOwner, Observer { items ->
+            foodItemsAdapter.setData(items)
+        })
     }
 
-    override fun onFoodCardClick(position: Int, items: List<FoodItemsModel>) {
+    override fun onFoodCardClick(
+        position: Int,
+        items: List<FoodItemsModel>
+     ) {
         val bundle = Bundle()
         bundle.putString("frontCoverUrl", items[position].frontCoverUrl)
         bundle.putString("imageDescription1", items[position].imageDescription1)
@@ -109,32 +138,25 @@ class FoodAndCategoryFragment : Fragment(),
     }
 
     private fun loadFromRetrofit() {
-        CoroutineScope(Dispatchers.IO).launch {
-            categoryResponse = try {
-                async { RetrofitInstance.api.getCategorys() }
-            } catch (e: IOException) {
-                Log.d("Retrofit", "You might not have internet")
-                return@launch
-            }
-            if (categoryResponse.await().isSuccessful && categoryResponse.await().body() != null) {
-                Log.d("Retrofit", "data successfuly load")
-                foodCategoryAdapter.setData(categoryResponse.await().body()!!)
-            } else {
-                Log.d("Retrofit", "Response not successful")
-            }
+        lifecycleScope.launchWhenCreated {
+            mViewModel.loadCategories()
         }
+
+        mViewModel.categories.observe(viewLifecycleOwner, Observer { categories ->
+            foodCategoryAdapter.setData(categories)
+        })
     }
 
     private fun setupRecyclerViews() {
-        rvCategorys = binding!!.rvCategorys
+        rvCategories = binding!!.rvCategories
         rvItems = binding!!.rvItems
 
         foodCategoryAdapter = FoodCategoryAdapter(mContext, this@FoodAndCategoryFragment)
         foodCategoryAdapter.setHasStableIds(true)
-        rvCategorys.layoutManager =
+        rvCategories.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        rvCategorys.setHasFixedSize(true)
-        rvCategorys.adapter = foodCategoryAdapter
+        rvCategories.setHasFixedSize(true)
+        rvCategories.adapter = foodCategoryAdapter
 
         foodItemsAdapter = FoodItemsAdapter(mContext, this@FoodAndCategoryFragment)
         foodItemsAdapter.setHasStableIds(true)
