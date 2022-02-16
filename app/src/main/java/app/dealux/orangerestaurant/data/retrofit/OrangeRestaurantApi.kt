@@ -1,7 +1,6 @@
 package app.dealux.orangerestaurant.data.retrofit
 
 import app.dealux.orangerestaurant.data.retrofit.model.*
-import app.dealux.orangerestaurant.data.sqlite.OrderEntity
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -9,6 +8,9 @@ interface OrangeRestaurantApi {
 
     @GET("/categorys")
     suspend fun getCategorys(): Response<List<FoodCategoryModel>>
+
+    @GET("/")
+    suspend fun getAllItems(): Response<List<FoodItemsModel>>
 
     @GET("/category/{category}")
     suspend fun getFoods(
