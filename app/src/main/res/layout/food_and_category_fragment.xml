@@ -131,7 +131,7 @@
                 app:layout_constraintTop_toBottomOf="@id/searchview" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_categorys"
+                android:id="@+id/rv_categories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -156,7 +156,7 @@
                 android:textSize="24sp"
 
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_categorys" />
+                app:layout_constraintTop_toBottomOf="@id/rv_categories" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_items"
