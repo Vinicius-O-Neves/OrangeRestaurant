@@ -15,7 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import app.dealux.orangerestaurant.OrangeRestaurant
 import app.dealux.orangerestaurant.databinding.SplashScreenBinding
 import app.dealux.orangerestaurant.R
-import app.dealux.orangerestaurant.repository.TableNumberDataStoreRepository
+import app.dealux.orangerestaurant.data.datastore.TableNumberDataStoreRepository
 import app.dealux.orangerestaurant.ui.di.MainComponent
 import app.dealux.orangerestaurant.ui.activitys.viewmodel.SplashScreenViewModel
 import app.dealux.orangerestaurant.utils.auth.AWSAuth
