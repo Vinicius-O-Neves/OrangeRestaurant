@@ -21,11 +21,11 @@ class FoodAndCategoryViewModel @Inject constructor() : ViewModel()  {
 
     private var mCategories = MutableLiveData<List<FoodCategoryModel>>()
     var categories: LiveData<List<FoodCategoryModel>> = mCategories
-    private lateinit var categoryResponse: Response<List<FoodCategoryModel>>
+    private lateinit var categoryResponse: Deferred<Response<List<FoodCategoryModel>>>
 
     private var mItems = MutableLiveData<List<FoodItemsModel>>()
     var items: LiveData<List<FoodItemsModel>> = mItems
-    private lateinit var itemsResponse: Response<List<FoodItemsModel>>
+    private lateinit var itemsResponse: Deferred<Response<List<FoodItemsModel>>>
 
 
     suspend fun searchItem(newText: String) {
@@ -49,19 +49,19 @@ class FoodAndCategoryViewModel @Inject constructor() : ViewModel()  {
     }
 
 
-    suspend fun loadCategories() {
-        viewModelScope.launch(Dispatchers.IO) {
+    fun loadCategories() {
+        viewModelScope.launch {
             categoryResponse = try {
-                RetrofitInstance.api.getCategorys()
+               async {  RetrofitInstance.api.getCategorys() }
             } catch (e: IOException) {
                 Log.d("Retrofit", "You might not have internet")
                 return@launch
             }
 
-            if (categoryResponse.isSuccessful && categoryResponse.body() != null) {
+            if (categoryResponse.await().isSuccessful && categoryResponse.await().body() != null) {
                 Log.d("Retrofit", "data successfuly load")
                 viewModelScope.launch {
-                    mCategories.value = categoryResponse.body()!!
+                    mCategories.value = categoryResponse.await().body()
                 }
             } else {
                 Log.d("Retrofit", "Response not successful")
@@ -69,22 +69,22 @@ class FoodAndCategoryViewModel @Inject constructor() : ViewModel()  {
         }
     }
 
-    suspend fun loadItems(categoryName: String){
-        viewModelScope.launch(Dispatchers.IO) {
-            itemsResponse = try {
-                RetrofitInstance.api.getFoods(categoryName)
-            } catch (e: IOException) {
-                Log.d("Retrofit", "You might not have internet")
-                return@launch
-            }
+   fun loadItems(categoryName: String) {
+       viewModelScope.launch {
+           itemsResponse = try {
+               async { RetrofitInstance.api.getFoods(categoryName) }
+           } catch (e: IOException) {
+               Log.d("Retrofit", "You might not have internet")
+               return@launch
+           }
 
-            if (itemsResponse.isSuccessful) {
-                Log.d("Retrofit", "data successfuly load")
-                viewModelScope.launch {
-                    mItems.value = itemsResponse.body()!!
-                }
-            }
-        }
-    }
+           if (itemsResponse.await().isSuccessful) {
+               Log.d("Retrofit", "data successfuly load")
+               viewModelScope.launch {
+                   mItems.value = itemsResponse.await().body()
+               }
+           }
+       }
+   }
 
 }
