@@ -1,15 +1,19 @@
 package app.dealux.orangerestaurant.adapter.category
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.LinearLayout.LayoutParams
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Transition
 import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.data.retrofit.model.FoodCategoryModel
 import app.dealux.orangerestaurant.databinding.FoodCategoryRvBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener) :
     RecyclerView.Adapter<FoodCategoryAdapter.FoodCategoryViewHolder>() {
@@ -52,7 +56,12 @@ class FoodCategoryAdapter(var context: Context, val listener: MyOnClickListener)
         holder.binding.apply {
             val item = items[position]
             categoryName.text = item.categoryName
-            Glide.with(context).load(item.categoryPhoto).into(categoryPhoto)
+            Glide.with(context)
+                .load("http://${item.categoryPhoto}")
+                .override(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(categoryPhoto)
+            Log.d("photo", item.categoryPhoto)
 
             if (selectPosition == position) {
                 holder.binding.linearLayout.background =
