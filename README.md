@@ -4,7 +4,7 @@ Developed for an imaginary restaurant, Orange Restaurant is an App built with Ko
 
 <div>
  <img src="https://github.com/Vinicius-O-Neves/OrangeRestaurant/blob/main/App_Orange_Restaurant.gif" align="center" width="500" height="900">
-<img src="https://github.com/Vinicius-O-Neves/OrangeRestaurant/blob/main/OrangeRestaurant_Firebase.gif" style="display: inline_block" align="center" width="500" height="900">
+<img src="https://github.com/Vinicius-O-Neves/OrangeRestaurant/blob/main/OrangeRestaurant_Firebase.gif" style="display: inline_block" align="center" width="800" height="900">
 </div>
 
 ### View Layout in Figma:
