@@ -147,9 +147,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/poppins"
-
                 android:gravity="center_vertical"
+
+                android:fontFamily="@font/poppins"
                 android:letterSpacing="0.04"
                 android:text="@string/activity_main_items_header"
                 android:textColor="@color/activity_main_txt_welcome"
