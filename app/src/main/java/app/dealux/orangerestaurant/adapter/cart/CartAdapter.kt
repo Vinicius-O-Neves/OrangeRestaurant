@@ -77,7 +77,9 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartAdapter.CartAdapterViewHolder, position: Int) {
         item = items[position]
         holder.binding.apply {
-            Glide.with(context).load(item!!.photo).into(itemImage)
+            Glide.with(context)
+                .load("http://${item!!.photo}")
+                .into(itemImage)
             itemName.text = item!!.name
             "R$ ${item!!.price}".also { itemPrice.text = it }
             itemsAddedAdapter!!.setData(listOf(item!!))
