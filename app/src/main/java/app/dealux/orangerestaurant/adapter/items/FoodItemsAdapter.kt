@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.dealux.orangerestaurant.R
@@ -49,7 +50,10 @@ class FoodItemsAdapter(var context: Context, val listener: MyOnClickListener) :
             val item = items[position]
             foodName.text = item.name
             "R$ ${item.price}".also { foodPrice.text = it }
-            Glide.with(context).load(item.frontCoverUrl).into(foodPhoto)
+            Glide.with(context)
+                .load("http://${item.frontCoverUrl}")
+                .override(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                .into(foodPhoto)
             holder.binding.cardView.animation =
                 AnimationUtils.loadAnimation(context, R.anim.slide_up)
         }
