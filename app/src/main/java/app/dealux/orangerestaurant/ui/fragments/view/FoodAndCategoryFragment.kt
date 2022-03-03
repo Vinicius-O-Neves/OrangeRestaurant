@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import  androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -60,6 +59,7 @@ class FoodAndCategoryFragment : Fragment(),
         binding = FoodAndCategoryFragmentBinding.inflate(layoutInflater)
         mContext = requireContext()
 
+        loadFromRetrofit()
         setupRecyclerViews()
 
         return binding!!.root
@@ -101,14 +101,12 @@ class FoodAndCategoryFragment : Fragment(),
     ) {
         val categoryName = itemsList[position].categoryName
 
-        lifecycleScope.launchWhenCreated {
-            mViewModel.loadItems(categoryName)
-        }
+        mViewModel.loadItems(categoryName)
 
         binding!!.txtItems.text = categoryName
-        mViewModel.items.observe(viewLifecycleOwner, Observer { items ->
+        mViewModel.items.observe(viewLifecycleOwner) { items ->
             foodItemsAdapter.setData(items)
-        })
+        }
     }
 
     override fun onFoodCardClick(
@@ -138,13 +136,11 @@ class FoodAndCategoryFragment : Fragment(),
     }
 
     private fun loadFromRetrofit() {
-        lifecycleScope.launchWhenCreated {
-            mViewModel.loadCategories()
-        }
+        mViewModel.loadCategories()
 
-        mViewModel.categories.observe(viewLifecycleOwner, Observer { categories ->
+        mViewModel.categories.observe(viewLifecycleOwner) { categories ->
             foodCategoryAdapter.setData(categories)
-        })
+        }
     }
 
     private fun setupRecyclerViews() {
