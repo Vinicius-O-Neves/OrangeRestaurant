@@ -3,7 +3,10 @@
 Developed for an imaginary restaurant, Orange Restaurant is an App built with Kotlin that allows the visualization of restaurant items, their ingredients and the purchase of these items
 
 <div>
+ ### app recording
  <img src="https://github.com/Vinicius-O-Neves/OrangeRestaurant/blob/main/App_Orange_Restaurant.gif" align="center" width="500" height="900">
+ #
+ ### items submitted to firebase
 <img src="https://github.com/Vinicius-O-Neves/OrangeRestaurant/blob/main/OrangeRestaurant_Firebase.gif" style="display: inline_block" align="center" width="800" height="900">
 </div>
 
