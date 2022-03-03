@@ -10,6 +10,7 @@ import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.data.retrofit.model.MeatPointModel
 import app.dealux.orangerestaurant.databinding.MeatPointRvBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -52,7 +53,10 @@ class MeatPointAdapter(var context: Context) :
         holder.binding.apply {
             val item = items[position]
             itemName.text = item.meatPointName
-            Glide.with(context).load(item.meatPointImage).into(itemImage)
+            Glide.with(context)
+                .load("http://${item.meatPointImage}")
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(itemImage)
 
             CoroutineScope(Dispatchers.Main).launch {
                 onCardClick(position, item, holder)
