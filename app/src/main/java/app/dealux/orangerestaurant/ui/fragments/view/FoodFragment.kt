@@ -24,6 +24,7 @@ import app.dealux.orangerestaurant.databinding.FoodFragmentBinding
 import app.dealux.orangerestaurant.ui.activitys.view.MainActivity
 import app.dealux.orangerestaurant.ui.fragments.viewmodel.FoodFragmentViewModel
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import kotlinx.coroutines.*
@@ -82,7 +83,9 @@ class FoodFragment : Fragment(),
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navBar.visibility = View.GONE
-        Glide.with(requireActivity()).load(imageDescription1)
+        Glide.with(requireActivity())
+            .load("http://$imageDescription1")
+            .transition(DrawableTransitionOptions.withCrossFade())
             .into(binding!!.imageview)
         binding!!.foodName.text = args.get("foodName").toString()
         binding!!.serve.text = args.get("serve").toString()
