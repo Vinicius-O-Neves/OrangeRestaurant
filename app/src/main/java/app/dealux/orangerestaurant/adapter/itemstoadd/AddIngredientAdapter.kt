@@ -10,6 +10,7 @@ import app.dealux.orangerestaurant.R
 import app.dealux.orangerestaurant.data.retrofit.model.AddIngredientModel
 import app.dealux.orangerestaurant.databinding.AddIngredientRvBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -55,7 +56,10 @@ class AddIngredientAdapter(var context: Context) :
         holder.binding.apply {
             val item = items[position]
             itemName.text = item.itemName
-            Glide.with(context).load(item.itemImage).into(itemImage)
+            Glide.with(context)
+                .load("http://${item.itemImage}")
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(itemImage)
 
             CoroutineScope(Dispatchers.Main).launch {
                 onCardClick(position, item, holder)
