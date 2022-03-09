@@ -25,7 +25,7 @@ Developed for an imaginary restaurant, Orange Restaurant is an App built with Ko
   </tr>
     <tr>
     <td>https://kotlinlang.org/docs/home.html</td>
-    <td>https://sa-east-1.console.aws.amazon.com/cognito/home?region=sa-east-1#</td>
+    <td>https://portal.aws.amazon.com/billing/signup#/start/email</td>
     <td>https://developer.android.com/training/data-storage/room</td>
     <td>https://developer.android.com/training/data-storage/sqlite</td>
     <td>https://firebase.google.com/docs/auth/android/google-signin?hl=pt-br</td>
