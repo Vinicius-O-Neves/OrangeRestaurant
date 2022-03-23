@@ -1,0 +1,39 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-orangerestaurant-staging-03545-authRole",
+      "UnauthRoleArn": "arn:aws:iam::514406156249:role/amplify-orangerestaurant-staging-03545-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::514406156249:role/amplify-orangerestaurant-staging-03545-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-orangerestaurant-staging-03545-deployment",
+      "UnauthRoleName": "amplify-orangerestaurant-staging-03545-unauthRole",
+      "StackName": "amplify-orangerestaurant-staging-03545",
+      "StackId": "arn:aws:cloudformation:us-east-1:514406156249:stack/amplify-orangerestaurant-staging-03545/ee483380-66ac-11ec-a0a5-1240661c4205",
+      "AmplifyAppId": "dafsf96t3gdg"
+    },
+    "categories": {
+      "auth": {
+        "orangerestaurantb469b777": {},
+        "OrangeRestaurant": {}
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-orangerestaurant-main-dev-170351-authRole",
+      "UnauthRoleArn": "arn:aws:iam::514406156249:role/amplify-orangerestaurant-main-dev-170351-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::514406156249:role/amplify-orangerestaurant-main-dev-170351-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-orangerestaurant-main-dev-170351-deployment",
+      "UnauthRoleName": "amplify-orangerestaurant-main-dev-170351-unauthRole",
+      "StackName": "amplify-orangerestaurant-main-dev-170351",
+      "StackId": "arn:aws:cloudformation:us-east-2:514406156249:stack/amplify-orangerestaurant-main-dev-170351/34ed5250-aa1b-11ec-81ef-02dc62daa510",
+      "AmplifyAppId": "d34jcn5riz6enh"
+    },
+    "categories": {
+      "auth": {
+        "orangerestaurantmain43057fb8": {}
+      }
+    }
+  }
+}
