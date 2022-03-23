@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="btn_lets_start">#F69E22</color>
+    <color name="btn_lets_start_2color">#FBBE67</color>
+    <color name="btn_lets_start_3color">#D59842</color>
+    <color name="layout_register_textinput_background">#E6E6E5E5</color>
+    <color name="layout_register_textinput_border">#8F8F8F</color>
+    <color name="layout_register_textinput_border_2">#BAB9B9</color>
+    <color name="layout_register_txt_register_color">#3E3D3D</color>
+    <color name="activity_main_background">#EEEEEE</color>
+    <color name="activity_main_txt_welcome">#393737</color>
+    <color name="activity_main_txt_your_favorite_food">#201D1D</color>
+</resources>

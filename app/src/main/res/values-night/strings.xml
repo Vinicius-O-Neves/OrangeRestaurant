@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_lets_start">Vamos Começar</string>
+    <string name="first_nome">Nome</string>
+    <string name="last_name">Sobrenome</string>
+    <string name="email">Email</string>
+    <string name="anniversary">Data de Nascimento</string>
+    <string name="next">Continuar</string>
+    <string name="connect_with_biometric">Conectar utilizando biometria</string>
+    <string name="fingerprint_image">fingerprint_image</string>
+    <string name="to_orange_restaurant">ao Orange Restaurant</string>
+    <string name="welcome">Seja bem vindo(a),</string>
+    <string name="register">Registre-se</string>
+    <string name="already_have_account">Já possui uma conta?</string>
+    <string name="login">login</string>
+    <string name="do_register">registrar</string>
+    <string name="password">Password</string>
+    <string name="do_login">Faça o Login</string>
+    <string name="layout_login_login">Login</string>
+    <string name="verification_code_send_to_email">Código de verificação</string>
+    <string name="confirm">Confirmar</string>
+    <string name="dont_have_an_account">Não possuí uma conta?</string>
+    <string name="activity_main_choose_the">Escolha a</string>
+    <string name="your_favorite_food">sua comida favorita</string>
+    <string name="activity_main_categorys_header">Categorias</string>
+    <string name="activity_main_items_header">Popular</string>
+    <string name="food_fragment_would_like_add_some_ingredient">Deseja adicionar algum ingrediente?</string>
+    <string name="food_fragment_ingredients">Ingredientes</string>
+    <string name="food_fragment_add_to_cart">Adicionar ao carrinho:</string>
+</resources>

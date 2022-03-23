@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="app.dealux.orangerestaurant.ui.fragments.viewmodel.SelectTableFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activity_main_background"
+        android:orientation="vertical">
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:id="@+id/scanner_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:autoFocusButtonColor="@color/white"
+            app:autoFocusButtonVisible="false"
+            app:flashButtonVisible="false"
+            app:frameAspectRatioHeight="1"
+            app:frameAspectRatioWidth="1"
+            app:frameColor="@color/white"
+            app:frameCornersRadius="0dp"
+            app:frameCornersSize="50dp"
+            app:frameSize="0.75"
+            app:frameThickness="2.3dp"
+            app:layout_constraintBottom_toTopOf="@id/view_divisor"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:maskColor="#77000000" />
+
+        <View
+            android:id="@+id/view_divisor"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/btn_lets_start_2color"
+
+            app:layout_constraintBottom_toTopOf="@id/txt_scanner" />
+
+        <TextView
+            android:id="@+id/txt_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="@color/activity_main_background"
+            android:fontFamily="@font/poppins_bold"
+
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
