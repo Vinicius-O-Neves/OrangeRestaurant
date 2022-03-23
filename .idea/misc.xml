@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_hamburguer.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_orange.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_orange_logo.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/activity_main_searchview_background.xml" value="0.22" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/add_ingredient_bottom_sheet_background.xml" value="0.3388888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/add_ingredient_card_change_color.xml" value="0.3290076335877863" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/add_ingredient_rv_background.xml" value="0.3388888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/bottom_nav_background.xml" value="0.34444444444444444" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/cart_fragment_card_table_or_delivery.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_category_background.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_category_selection_background.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_fragment_background.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_fragment_ingredients_card_background.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_fragment_ingredients_card_wire.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/food_item_background.xml" value="0.35" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_arrow_back.xml" value="0.34444444444444444" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_bike.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_clock.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_filter_1.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_filter_2.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_filter_3.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_filter_4.xml" value="0.1025" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_group.xml" value="0.1" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_layout_register_background.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_money.xml" value="0.3534351145038168" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_person.xml" value="0.34444444444444444" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/ic_shopping_cart.xml" value="0.34444444444444444" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/item_in_cart_rv_background.xml" value="0.2861111111111111" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_confirm_ic_help.xml" value="0.15910652920962198" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_background.xml" value="0.2569444444444444" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_ic_waiter.xml" value="0.3290076335877863" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_textinput.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_textinput_background.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_textinput_effect.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_textinput_focused.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/layout_register_textinput_focused_background.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen/drawable/splashscreen_btn_lets_start_effect.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen/drawable/splashscreen_btn_lets_start_not_pressed.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen/drawable/splashscreen_btn_lets_start_pressed.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen_btn_lets_start_effect.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen_btn_lets_start_not_pressed.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/drawable/splashscreen_btn_lets_start_pressed.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-hdpi/layout_login.xml" value="0.33" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-hdpi/layout_register_aws.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-hdpi/layout_register_biometric.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-hdpi/splash_screen.xml" value="0.33125" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-large/layout_register_firebase.xml" value="0.22" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-normal/layout_register_firebase.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-v26/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/layout_login.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/layout_login_biometric.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/layout_register_aws.xml" value="0.22" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/layout_register_biometric.xml" value="0.22" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/layout_register_firebase.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xhdpi/splash_screen.xml" value="0.16" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxhdpi/layout_login.xml" value="0.15" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxhdpi/layout_register_aws.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxhdpi/layout_register_biometric.xml" value="0.225" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxhdpi/layout_register_firebase.xml" value="0.18" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxxhdpi/layout_register_aws.xml" value="0.15625" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxxhdpi/layout_register_biometric.xml" value="0.14" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout-xxxhdpi/layout_register_firebase.xml" value="0.15" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_confirm_register.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_confirme_register.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/add_in_hamburguer_rv.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/add_ingredient_bottom_sheet.xml" value="0.33" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/add_ingredient_rv.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/cart_fragment.xml" value="0.31610337972166996" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/content_main.xml" value="0.3375" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/food_and_category_fragment.xml" value="0.3375" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/food_category_rv.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/food_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/food_items_rv.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/fragment_profile.xml" value="0.3375" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/fragment_select_table.xml" value="0.3125" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/item_added_in_food_rv.xml" value="0.3375" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/item_in_cart_rv.xml" value="0.22" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_confirm_user.xml" value="0.16" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_login_biometric.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register.xml" value="0.18" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register_aws.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register_biometric.xml" value="0.3687002652519894" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register_confirm_user.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/layout_register_firebase.xml" value="0.67" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/meat_point_rv.xml" value="0.5" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/layout/splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius Neves/Desktop/OrangeRestaurant/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
