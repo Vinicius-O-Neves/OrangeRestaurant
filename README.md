@@ -16,7 +16,7 @@ Developed for an imaginary restaurant, Orange Restaurant is an App built with Ko
 <table>
   <tr>
     <td>Kotlin</td>
-    <td>Amazon Amplify</td>
+    <td>Amazon Cognito</td>
     <td>ROOM</td>
     <td>SQLite</td>
     <td>Firebase</td>
