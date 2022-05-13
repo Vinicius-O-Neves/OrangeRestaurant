@@ -21,7 +21,7 @@ Developed for an imaginary restaurant, Orange Restaurant is an App built with Ko
     <td>SQLite</td>
     <td>Firebase</td>
     <td>Coroutine</td>
-    <td>SharedPreferences</td>
+    <td>DataStore</td>
   </tr>
     <tr>
     <td>https://kotlinlang.org/docs/home.html</td>
@@ -30,6 +30,6 @@ Developed for an imaginary restaurant, Orange Restaurant is an App built with Ko
     <td>https://developer.android.com/training/data-storage/sqlite</td>
     <td>https://firebase.google.com/docs/auth/android/google-signin?hl=pt-br</td>
     <td>https://developer.android.com/kotlin/coroutines</td>
-    <td>https://developer.android.com/training/data-storage/shared-preferences</td>
+    <td>https://developer.android.com/topic/libraries/architecture/datastore?hl=pt-br</td>
   </tr>
 </table>
